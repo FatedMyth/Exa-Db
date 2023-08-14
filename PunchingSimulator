@@ -46,10 +46,42 @@ local Window = Rayfield:CreateWindow({
 
  local isRunning = false -- Variable to track the loop state
 
+local Toggle = MainTab:CreateToggle({
+    Name = "Auto Tap",
+    CurrentValue = false,
+    Flag = "Toggle1",
+    Callback = function(Value)
+        isRunning = Value -- Update the loop state based on the toggle value
+
+        if isRunning then
+            while isRunning do
+                game:GetService("ReplicatedStorage").Events.DamageIncreaseOnClickEvent:FireServer()
+                wait()
+            end
+        end
+    end,
+})
+local Toggle = MainTab:CreateToggle({
+    Name = "Multi Claim Gem",
+    CurrentValue = false,
+    Flag = "Toggle2",
+    Callback = function(Value)
+        isRunning = Value -- Update the loop state based on the toggle value
+
+        if isRunning then
+            while isRunning do
+                local args = {[1] = 2}
+                game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PlaytimeRewardUpdateEvent"):FireServer(unpack(args))
+                wait (0)
+
+            end
+        end
+    end,
+})
  local Toggle = MainTab:CreateToggle({
     Name = "Forest Egg 1",
     CurrentValue = false,
-    Flag = "Toggle1",
+    Flag = "Toggle3",
     Callback = function(Value)
         isRunning = Value -- Update the loop state based on the toggle value
 
@@ -65,7 +97,7 @@ local Window = Rayfield:CreateWindow({
  local Toggle = MainTab:CreateToggle({
      Name = "Forest Egg 2",
      CurrentValue = false,
-     Flag = "Toggle2",
+     Flag = "Toggle4",
      Callback = function(Value)
          isRunning = Value -- Update the loop state based on the toggle value
  
@@ -148,18 +180,4 @@ local Window = Rayfield:CreateWindow({
 
 game:GetService("ReplicatedStorage").Events.DamageIncreaseOnClickEvent:FireServer()
 
-local Toggle = MainTab:CreateToggle({
-    Name = "Auto Tap",
-    CurrentValue = false,
-    Flag = "Toggle3",
-    Callback = function(Value)
-        isRunning = Value -- Update the loop state based on the toggle value
 
-        if isRunning then
-            while isRunning do
-                game:GetService("ReplicatedStorage").Events.DamageIncreaseOnClickEvent:FireServer()
-                wait()
-            end
-        end
-    end,
-})
