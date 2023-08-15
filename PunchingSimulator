@@ -125,7 +125,22 @@ local Toggle = MainTab:CreateToggle({
          end
      end,
  })
-
+ local Toggle = MainTab:CreateToggle({
+     Name = "Samurai Egg",
+     CurrentValue = false,
+     Flag = "Toggle11",
+     Callback = function(Value)
+         isRunning = Value -- Update the loop state based on the toggle value
+ 
+         if isRunning then
+             while isRunning do
+                 local args = {[1] = "9"}
+                 game:GetService("ReplicatedStorage").Events.PlayerPressedKeyOnEgg:FireServer(unpack(args))
+                 wait()
+             end
+         end
+     end,
+ })
 
 
  local TpTab = Window:CreateTab("Teleports🛬", nil) -- Title, Image
