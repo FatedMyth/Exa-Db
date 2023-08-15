@@ -121,7 +121,7 @@ local Toggle = MainTab:CreateToggle({
             while isRunning do
                 local args = {[1] = "8"}
                 game:GetService("ReplicatedStorage").Events.PlayerPressedKeyOnEgg:FireServer(unpack(args))
-                wait()
+                wait(0.2)
             end
         end
     end,
