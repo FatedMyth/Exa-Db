@@ -43,7 +43,13 @@ local Window = Rayfield:CreateWindow({
     },
  },
  })
+getgenv().punchpower = true;
 
+while wait() do
+    if getgenv().punchpower == true then
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("DamageIncreaseOnClickEvent"):FireServer()
+    wait (0.2)
+end
 
 local isRunning = false -- Variable to track the loop state
 
@@ -56,10 +62,8 @@ local Toggle = MainTab:CreateToggle({
 
         if isRunning then
             while isRunning do
-                local args = {[1] = 2}
                 game:GetService("ReplicatedStorage").Events.DamageIncreaseOnClickEvent:FireServer()
-                wait (0)
-
+                wait()
             end
         end
     end,
