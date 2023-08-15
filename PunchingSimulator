@@ -112,14 +112,6 @@ local Toggle = MainTab:CreateToggle({
 
 
 
-
-
-
-
-
-
-
-
  local TpTab = Window:CreateTab("Teleports🛬", nil) -- Title, Image
  local TpSection = TpTab:CreateSection("Teleports")
 
@@ -129,42 +121,54 @@ local Toggle = MainTab:CreateToggle({
         game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
     end,
     })
-
-    local Button = TpTab:CreateButton({Name = "Desert",
-        Callback = function()
-            local args = {[1] = "Teleport",[2] = 2}
-            game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
-        end,
-        })
-
-        local Button = TpTab:CreateButton({Name = "Cave",
-            Callback = function()
-                local args = {[1] = "Teleport",[2] = 3}
-                game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
-            end,
-            })
-
-            local Button = TpTab:CreateButton({Name = "Ocean",
-                Callback = function()
-                    local args = {[1] = "Teleport",[2] = 4}
-                    game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
-                end,
-                })
-
-                local Button = TpTab:CreateButton({Name = "Candy",
-                    Callback = function()
-                        local args = {[1] = "Teleport",[2] = 5}
-                        game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
-                    end,
-                    })
-
-                    local Button = TpTab:CreateButton({Name = "Snow",
-                        Callback = function()
-                            local args = {[1] = "Teleport",[2] = 6}
-                            game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
-                        end,
-                        })
-
+ local Button = TpTab:CreateButton({Name = "Desert",
+    Callback = function()
+        local args = {[1] = "Teleport",[2] = 2}
+        game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
+    end,
+    })
+ local Button = TpTab:CreateButton({Name = "Cave",
+    Callback = function()
+        local args = {[1] = "Teleport",[2] = 3}
+        game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
+    end,
+    })
+ local Button = TpTab:CreateButton({Name = "Ocean",
+    Callback = function()
+        local args = {[1] = "Teleport",[2] = 4}
+        game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
+    end,
+    })
+ local Button = TpTab:CreateButton({Name = "Candy",
+    Callback = function()
+        local args = {[1] = "Teleport",[2] = 5}
+        game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
+    end,
+    })
+ local Button = TpTab:CreateButton({Name = "Snow",
+    Callback = function()
+        local args = {[1] = "Teleport",[2] = 6}
+        game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
+    end,
+    })
+ local Button = TpTab:CreateButton({Name = "Toy Zone",
+    Callback = function()
+        local args = {[1] = "Teleport",[2] = 7}
+        game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
+    end,
+    })
+local Button = TpTab:CreateButton({Name = "Farm",
+    Callback = function()
+        local args = {[1] = "Teleport",[2] = 8}
+        game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
+    end,
+    })
+local Button = TpTab:CreateButton({Name = "Samurai",
+    Callback = function()
+        local args = {[1] = "Teleport",[2] = 9}
+        game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
+    end,
+    })
 
 game:GetService("ReplicatedStorage").Events.DamageIncreaseOnClickEvent:FireServer()
 
