@@ -88,7 +88,7 @@ local Toggle = MainTab:CreateToggle({
             while isRunning do
                 local args = {[1] = "1"}
                 game:GetService("ReplicatedStorage").Events.PlayerPressedKeyOnEgg:FireServer(unpack(args))
-                wait(0.5)
+                wait()
             end
         end
     end,
@@ -104,7 +104,7 @@ local Toggle = MainTab:CreateToggle({
              while isRunning do
                  local args = {[1] = "Forest2"}
                  game:GetService("ReplicatedStorage").Events.PlayerPressedKeyOnEgg:FireServer(unpack(args))
-                 wait(0.5)
+                 wait()
              end
          end
      end,
@@ -120,7 +120,7 @@ local Toggle = MainTab:CreateToggle({
              while isRunning do
                  local args = {[1] = "8"}
                  game:GetService("ReplicatedStorage").Events.PlayerPressedKeyOnEgg:FireServer(unpack(args))
-                 wait(0.5)
+                 wait()
              end
          end
      end,
