@@ -43,10 +43,33 @@ local Window = Rayfield:CreateWindow({
     },
  },
  })
+getgenv().punchpower = true;
 
+while wait() do
+    if getgenv().punchpower == true then
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("DamageIncreaseOnClickEvent"):FireServer()
+    wait (0.2)
+end
 
 local isRunning = false -- Variable to track the loop state
 
+local Toggle = MainTab:CreateToggle({
+    Name = "Auto Tap",
+    CurrentValue = false,
+    Flag = "Toggle1",
+    Callback = function(Value)
+        isRunning = Value -- Update the loop state based on the toggle value
+
+        if isRunning then
+            while isRunning do
+                local args = {[1] = 2}
+                game:GetService("ReplicatedStorage").Events.DamageIncreaseOnClickEvent:FireServer()
+                wait (0)
+
+            end
+        end
+    end,
+})
 local Toggle = MainTab:CreateToggle({
     Name = "Multi Claim Gem",
     CurrentValue = false,
