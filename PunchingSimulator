@@ -46,11 +46,7 @@ local Window = Rayfield:CreateWindow({
 
  local isRunning = false -- Variable to track the loop state
 
-local Toggle = MainTab:CreateToggle({
-    Name = "Auto Tap",
-    CurrentValue = false,
-    Flag = "Toggle1",
-    Callback = function(Value)
+local Toggle = MainTab:CreateToggle({Flag = "Toggle1", Name = "Auto Tap", CurrentValue = false, Callback = function(Value)
         isRunning = Value -- Update the loop state based on the toggle value
 
         if isRunning then
@@ -61,11 +57,7 @@ local Toggle = MainTab:CreateToggle({
         end
     end,
 })
-local Toggle = MainTab:CreateToggle({
-    Name = "Multi Claim Gift 2",
-    CurrentValue = false,
-    Flag = "Toggle2",
-    Callback = function(Value)
+local Toggle = MainTab:CreateToggle({Flag = "Toggle2", Name = "Multi Claim Gift 2", CurrentValue = false, Callback = function(Value)
         isRunning = Value -- Update the loop state based on the toggle value
 
         if isRunning then
@@ -77,11 +69,7 @@ local Toggle = MainTab:CreateToggle({
         end
     end,
 })
- local Toggle = MainTab:CreateToggle({
-    Name = "Forest Egg 1",
-    CurrentValue = false,
-    Flag = "Toggle3",
-    Callback = function(Value)
+ local Toggle = MainTab:CreateToggle({Flag = "Toggle3", Name = "Forest Egg 1", CurrentValue = false, Callback = function(Value)
         isRunning = Value -- Update the loop state based on the toggle value
 
         if isRunning then
@@ -95,11 +83,7 @@ end
         end
     end,
 })
- local Toggle = MainTab:CreateToggle({
-     Name = "Forest Egg 2",
-     CurrentValue = false,
-     Flag = "Toggle4",
-     Callback = function(Value)
+ local Toggle = MainTab:CreateToggle({Flag = "Toggle4", Name = "Forest Egg 2", CurrentValue = false, Callback = function(Value)
          isRunning = Value -- Update the loop state based on the toggle value
  
          if isRunning then
@@ -113,11 +97,7 @@ end
          end
      end,
  })
- local Toggle = MainTab:CreateToggle({
-     Name = "Farm Egg",
-     CurrentValue = false,
-     Flag = "Toggle10",
-     Callback = function(Value)
+ local Toggle = MainTab:CreateToggle({Flag = "Toggle10", Name = "Farm Egg", CurrentValue = false, Callback = function(Value)
          isRunning = Value -- Update the loop state based on the toggle value
  
          if isRunning then
@@ -131,11 +111,7 @@ end
          end
      end,
  })
- local Toggle = MainTab:CreateToggle({
-     Name = "Samurai Egg",
-     CurrentValue = false,
-     Flag = "Toggle11",
-     Callback = function(Value)
+ local Toggle = MainTab:CreateToggle({Flag = "Toggle11", Name = "Samurai Egg", CurrentValue = false, Callback = function(Value)
          isRunning = Value -- Update the loop state based on the toggle value
  
          if isRunning then
