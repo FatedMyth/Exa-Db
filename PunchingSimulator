@@ -106,7 +106,7 @@ local Toggle = MainTab:CreateToggle({
                  }
                  game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PlayerPressedKeyOnEgg"):FireServer(unpack(args))
                  if workspace.Camera:FindFirstChild("EggOpenMap") and workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels") and workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model") then 
-                 workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model"):Destroy()
+                     workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model"):Destroy()
                  end
              end
          end
