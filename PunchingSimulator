@@ -87,7 +87,10 @@ local Toggle = MainTab:CreateToggle({
         if isRunning then
             while isRunning do
                  local args = {[1] = "1"}
-                 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PlayerPressedKeyOnEgg"):FireServer(unpack(args))
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PlayerPressedKeyOnEgg"):FireServer(unpack(args))
+if workspace.Camera:FindFirstChild("EggOpenMap") and workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels") and  workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model") then 
+workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model"):Destroy()
+end
              end
          end
      end,
@@ -102,7 +105,10 @@ local Toggle = MainTab:CreateToggle({
          if isRunning then
              while isRunning do
                  local args = {[1] = "Forest2"}
-                 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PlayerPressedKeyOnEgg"):FireServer(unpack(args))
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PlayerPressedKeyOnEgg"):FireServer(unpack(args))
+if workspace.Camera:FindFirstChild("EggOpenMap") and workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels") and  workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model") then 
+workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model"):Destroy()
+end
              end
          end
      end,
@@ -117,7 +123,10 @@ local Toggle = MainTab:CreateToggle({
          if isRunning then
              while isRunning do
                  local args = {[1] = "8"}
-                 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PlayerPressedKeyOnEgg"):FireServer(unpack(args))
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PlayerPressedKeyOnEgg"):FireServer(unpack(args))
+if workspace.Camera:FindFirstChild("EggOpenMap") and workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels") and  workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model") then 
+workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model"):Destroy()
+end
              end
          end
      end,
@@ -132,7 +141,10 @@ local Toggle = MainTab:CreateToggle({
          if isRunning then
              while isRunning do
                  local args = {[1] = "9"}
-                 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PlayerPressedKeyOnEgg"):FireServer(unpack(args))
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PlayerPressedKeyOnEgg"):FireServer(unpack(args))
+if workspace.Camera:FindFirstChild("EggOpenMap") and workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels") and  workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model") then 
+workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model"):Destroy()
+end
              end
          end
      end,
