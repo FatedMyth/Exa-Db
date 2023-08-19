@@ -119,10 +119,9 @@ local Toggle = MainTab:CreateToggle({
          if isRunning then
              while isRunning do
                  local args = {[1] = "8"}
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PlayerPressedKeyOnEgg"):FireServer(unpack(args))
-if workspace.Camera:FindFirstChild("EggOpenMap") and workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels") and  workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model") then 
-workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model"):Destroy()
-end
+                 game:GetService("ReplicatedStorage").Events.PlayerPressedKeyOnEgg:FireServer(unpack(args))
+                 wait()
+             end
          end
      end,
  })
