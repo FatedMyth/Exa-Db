@@ -62,9 +62,8 @@ local Toggle = MainTab:CreateToggle({
     end,
 })
 local Toggle = MainTab:CreateToggle({
-    Flag = "Toggle2", 
     Name = "Multi Claim Gift 2", 
-    CurrentValue = false, 
+    CurrentValue = false, Flag = "Toggle2",
     Callback = function(Value)
         isRunning = Value -- Update the loop state based on the toggle value
 
@@ -96,9 +95,9 @@ end
     end,
 })
  local Toggle = MainTab:CreateToggle({
-    Flag = "Toggle4", 
     Name = "Forest Egg 2", 
     CurrentValue = false, 
+    Flag = "Toggle4",
     Callback = function(Value)
          isRunning = Value -- Update the loop state based on the toggle value
  
