@@ -120,6 +120,26 @@ end
  local Toggle = MainTab:CreateToggle({
      Name = "Candy Egg",
      CurrentValue = false,
+     Flag = "Toggle7",
+     Callback = function(Value)
+     isRunning = Value -- Update the loop state based on the toggle value
+
+         if isRunning then
+             while isRunning and task.wait(0.021) do
+             local args = {
+                 [1] = "5"
+             }
+             game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PlayerPressedKeyOnEgg"):FireServer(unpack(args))
+if workspace.Camera:FindFirstChild("EggOpenMap") and workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels") and  workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model") then 
+workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model"):Destroy()
+end
+             end
+         end
+     end,
+ })
+ local Toggle = MainTab:CreateToggle({
+     Name = "Toy Egg",
+     CurrentValue = false,
      Flag = "Toggle9",
      Callback = function(Value)
      isRunning = Value -- Update the loop state based on the toggle value
