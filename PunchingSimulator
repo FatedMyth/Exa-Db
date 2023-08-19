@@ -91,17 +91,12 @@ game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Player
         end
     end,
 })
- local Toggle = MainTab:CreateToggle({
-    Name = "Forest Egg 2",
-    CurrentValue = false,
-    Flag = "Toggle4",
-    Callback = function(Value)
+ local Toggle = MainTab:CreateToggle({Name = "Forest Egg 2",CurrentValue = false,Flag = "Toggle4",Callback = function(Value)
          isRunning = Value -- Update the loop state based on the toggle value
  
          if isRunning then
              while isRunning do
-_G.Xd = true
-while _G.Xd and task.wait(0.021) do
+
 local args = {
     [1] = "Forest2"
 }
@@ -109,7 +104,7 @@ local args = {
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("PlayerPressedKeyOnEgg"):FireServer(unpack(args))
 if workspace.Camera:FindFirstChild("EggOpenMap") and workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels") and  workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model") then 
 workspace.Camera.EggOpenMap:FindFirstChild("PetOpeningModels"):FindFirstChildOfClass("Model"):Destroy()
-end
+
 end
              end
          end
