@@ -200,7 +200,7 @@ end
  local Toggle = MainTab:CreateToggle({
     Name = "Space Egg",
     CurrentValue = false,
-    Flag = "Toggle11",
+    Flag = "Toggle12",
     Callback = function(Value)
          isRunning = Value -- Update the loop state based on the toggle value
  
