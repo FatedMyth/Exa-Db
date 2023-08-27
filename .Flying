@@ -98,11 +98,11 @@ local function NQWSTGE_fake_script() -- Frame.Fly
     
     mouse.KeyDown:connect(function(key) 
     if key:lower() == "f" then
-            flying = true 
-            Fly()
-    else 
-            if flying then flying = false 
+                if flying then flying = false 
                 speed = 17
+    else 
+        flying = true 
+            Fly()
     end 
 
     elseif key:lower() == "w" then 
