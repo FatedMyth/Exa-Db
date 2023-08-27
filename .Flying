@@ -97,7 +97,7 @@ local function NQWSTGE_fake_script() -- Frame.Fly
     end 
     
     mouse.KeyDown:connect(function(key) 
-    if key:lower() == "f" then ---------------------hotkey to fly
+    if key:lower() == "f" then
             flying = true 
             Fly()
     else 
