@@ -97,14 +97,14 @@ local function NQWSTGE_fake_script() -- Frame.Fly
     end 
     
     mouse.KeyDown:connect(function(key) 
-    if key:lower() == "f" then 
+    if key:lower() == "f" then ---------------------hotkey to fly
+            flying = true 
+            Fly()
+    else 
             if flying then flying = false 
                 speed = 17
-    else 
-    flying = true 
-    Fly()
-    
     end 
+
     elseif key:lower() == "w" then 
     ctrl.f = 1 
     elseif key:lower() == "s" then 
@@ -117,13 +117,13 @@ local function NQWSTGE_fake_script() -- Frame.Fly
     end) 
     mouse.KeyUp:connect(function(key) 
     if key:lower() == "w" then 
-    ctrl.f = 0 
+    ctrl.f = 1 
     elseif key:lower() == "s" then 
-    ctrl.b = 0 
+    ctrl.b = -1 
     elseif key:lower() == "a" then 
-    ctrl.l = 0 
+    ctrl.l = -1 
     elseif key:lower() == "d" then 
-    ctrl.r = 0 
+    ctrl.r = 1 
     end 
     end)
     
