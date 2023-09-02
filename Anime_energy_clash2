@@ -1,0 +1,169 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Anime Energy Clash Simulator"})
+ 
+local Tab = Window:MakeTab({
+	Name = "pizza",
+	PremiumOnly = false
+})
+ 
+local ClaimTab = Window:MakeTab({
+	Name = "pizza",
+	PremiumOnly = false
+})
+ 
+Tab:AddToggle({
+	Name = "Auto Swing",
+	Default = false,
+	Callback = function(Value)
+		_G.autoswing = Value
+		while _G.autoswing and task.wait() do
+			game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerClick"):FireServer()
+		end
+	end	
+})
+ 
+Tab:AddToggle({
+	Name = "Auto Win Any", 
+	Default = false,
+	Callback = function(Value)
+		_G.autowin = Value
+		while _G.autowin and task.wait() do
+			local args = {
+				[1] = true
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerPKEnd"):FireServer(unpack(args))
+		end
+	end
+})
+ 
+Tab:AddToggle({
+	Name = "Auto Claim Event",
+	Default = false, 
+	Callback = function(Value)
+		_G.claimevent = Value
+		while _G.claimevent and task.wait() do
+			local args = {
+				[1] = "E600"
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Events"):WaitForChild("[C-S]TryGetEventReward"):FireServer(unpack(args))
+		end
+	end
+})
+ 
+Tab:AddToggle({
+	Name = "Auto Rebirth",
+	Default = false,
+	Callback = function(Value)
+		_G.rebirth = Value
+		while _G.rebirth and task.wait() do
+			game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Rebirth"):WaitForChild("[C-S]TryBuyRebirth"):FireServer()
+		end
+	end  
+})
+ 
+Tab:AddButton({
+  Name = "Craft All Heroes",
+  Callback = function()
+    local petsFolder = game:GetService("Players").LocalPlayer.PlayerGui.Main.Pet.Main.BackPack.ScrollingFrame
+ 
+    for i, petFrame in ipairs(petsFolder:GetChildren()) do
+      if petFrame:IsA("Frame") then
+        local args = {
+          [1] = petFrame.Name
+        }
+ 
+        game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Pet"):WaitForChild("[S-C]CraftPets"):FireServer(unpack(args))
+      end
+    end
+  end
+})
+ 
+ClaimTab:AddButton({
+	Name = "Claim Time Rewards",
+	Callback = function()
+		for i = 1, 12 do 
+		   local args = {
+				[1] = tostring(i)
+			}
+ 
+			game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Reward"):WaitForChild("[C-S]TryGetReward"):FireServer(unpack(args))
+		end
+	end
+})
+ 
+ClaimTab:AddButton({
+	Name = "Claim Friend Rewards",
+	Callback = function()
+		local rewards = {"Reward1", "Reward2", "Reward3", "Reward4", "Reward5", "Reward6", "Reward7"}
+ 
+		for i, reward in ipairs(rewards) do
+			local args = {
+				[1] = reward
+			}
+ 
+			game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Friends"):WaitForChild("[C-S]TryGetFriendsRewards"):FireServer(unpack(args))
+		end
+	end
+})
+ 
+ClaimTab:AddButton({
+	Name = "Teleport to Final Boss",
+	Callback = function()
+		local position = Vector3.new(-3171.80615, 8.30275154, 24.0737953)
+		local lookAt = Vector3.new(-4.37113883e-08, 0, -1)
+ 
+		game.Players.LocalPlayer.Character.HumanoidRootPart:PivotTo(CFrame.new(position, lookAt))
+	end
+})
+ 
+ClaimTab:AddToggle({
+	Name = "Auto Spin Wheel",
+	Default = false, 
+	Callback = function(Value)
+		_G.spin = Value
+		while _G.spin and task.wait() do
+			game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Spin"):WaitForChild("[C-S]TrySpin"):InvokeServer()
+		end
+	end
+})
+ 
+ClaimTab:AddButton({
+  Name = "Claim Pass Rewards",
+  Callback = function()
+    local rewards = {}
+ 
+    for i = 1, 20 do
+      table.insert(rewards, "Pass"..i) 
+    end
+ 
+    for i, reward in ipairs(rewards) do  
+      local args = {
+        [1] = reward
+      }
+ 
+      game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Mission"):WaitForChild("[C-S]TryGetReward"):FireServer(unpack(args))
+    end
+  end
+})
+ 
+ClaimTab:AddButton({
+	Name = "click the pets to auto delete them",
+	Callback = function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(78.0235291, 14.0928507, -2.51459503, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+		end
+})
+ 
+ClaimTab:AddToggle({
+	Name = "Auto Open Legendary Egg",
+	Default = false,
+	Callback = function(Value)
+		_G.autoegg = Value
+		while _G.autoegg and task.wait() do
+			local args = {
+				[1] = "Egg4"
+			}
+ 
+			game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+		end
+	end
+})
