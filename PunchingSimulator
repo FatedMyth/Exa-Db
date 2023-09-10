@@ -86,7 +86,7 @@ local Toggle = MainTab:CreateToggle({
 
          if isRunning then
              while isRunning and task.wait(0.021) do
-                for i = 1, 300 do
+                for i = 1, 500 do
                  local args = {
                  [1] = "1"
                  }
