@@ -1,0 +1,140 @@
+local part = workspace.Map["for iwnless"].MainRooms:GetChildren()[55]
+part:Destroy()
+
+for _,v in pairs(game:service("Workspace"):GetDescendants()) do 
+
+    if v:IsA("ProximityPrompt") then
+
+      v.RequiresLineOfSight = false
+
+  end 
+
+end
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({
+  Name = "pizza",
+  IntroEnabled = false,
+})
+local pizza = Window:MakeTab({
+  Name = "pizza", 
+  Icon = "rbxassetid://4483345998"
+})
+pizza:AddParagraph("made by", "xcsrf")
+
+
+
+
+pizza:AddButton({
+    Name = "Collect Pizzas/Wires",
+    Callback = function()
+		local itemGroup = workspace.GameTriggers.Items.ItemGroup
+		local parts = itemGroup:GetChildren()
+
+		for i, part in ipairs(parts) do
+		  local pos = part.Position
+		  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+		  wait(0.2)
+		end
+    end    
+})
+
+pizza:AddButton({
+    Name = "Emergency Switches",
+    Callback = function()
+		local switches = workspace.GameTriggers.Objectives.PowerSwitches:GetChildren() 
+
+		for i, switch in ipairs(switches) do
+		  local bodyPart = switch.Body
+		  local pos = bodyPart.Position
+		  local prompt = bodyPart.Attachment.ProximityPrompt
+
+		  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+		  wait(0.2)
+		  
+		  prompt:InputHoldBegin()
+		  wait(0.2)
+		  prompt:InputHoldEnd()
+		  
+		  wait(0.2)
+		end
+    end    
+})
+
+pizza:AddButton({
+    Name = "Find Generators",
+    Callback = function()
+		local generators = workspace.GameTriggers.Objectives.Generators:GetDescendants()
+
+		for i, part in ipairs(generators) do
+		  if part:FindFirstChild("ClickDetector") then 
+			local pos = part.Position
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+			wait(0.5)
+		  end
+		end
+    end    
+})
+
+
+pizza:AddButton({
+    Name = "Survive",
+    Callback = function()
+		game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-266, 637, -97)
+    end    
+})
+
+pizza:AddButton({
+    Name = "Collect Gifts",
+    Callback = function()
+		local itemGroup = workspace.GameTriggers.Items.GiftBoxes.ItemGroup
+		local parts = itemGroup:GetChildren()
+
+		for i, part in ipairs(parts) do
+		  local pos = part.Position
+		  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+		  wait(0.2)
+		end
+    end    
+})
+
+pizza:AddButton({
+    Name = "Deliver Gifts",
+    Callback = function()
+		game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-57, 594, -114)
+    end    
+})
+
+
+pizza:AddButton({
+    Name = "Collect Documents",
+    Callback = function()
+		local itemGroup = workspace.GameTriggers.Items.Documents.ItemGroup
+		local parts = itemGroup:GetChildren()
+
+		for i, part in ipairs(parts) do
+		  local pos = part.Position
+		  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+		  wait(0.2)
+		end
+    end    
+})
+
+pizza:AddButton({
+    Name = "Activate Panels",
+    Callback = function()
+		local generators = workspace.GameTriggers.Objectives.Panels:GetDescendants()
+
+		for i, part in ipairs(generators) do
+		  if part:FindFirstChild("ClickDetector") then 
+			local pos = part.Position
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+			wait(0.5)
+		  end
+		end
+    end    
+})
+
+
+
+OrionLib:Init()
