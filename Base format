@@ -103,10 +103,19 @@ local Toggle = MainTab:CreateToggle({
  local TpTab = Window:CreateTab("Teleports🛬", nil) -- Title, Image
  local TpSection = TpTab:CreateSection("Teleports")
 
- local Button = TpTab:CreateButton({Name = "Forest",
+ local Button = TpTab:CreateButton({Name = "rejoin game",
     Callback = function()
         local args = {[1] = "Teleport",[2] = 1}
-        game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
+
+			local Players = game:GetService("Players")
+			local TeleportService = game:GetService("TeleportService")
+
+			Players.PlayerAdded:Connect(function(player)
+    		player.Chatted:Connect(function(message)
+            TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, player)
+
+    		end)
+			end)
     end,
     })
  local Button = TpTab:CreateButton({Name = "Desert",
@@ -115,4 +124,3 @@ local Toggle = MainTab:CreateToggle({
         game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
     end,
     })
-
