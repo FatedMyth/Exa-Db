@@ -107,15 +107,7 @@ local Toggle = MainTab:CreateToggle({
     Callback = function()
         local args = {[1] = "Teleport",[2] = 1}
 
-			local Players = game:GetService("Players")
-			local TeleportService = game:GetService("TeleportService")
 
-			Players.PlayerAdded:Connect(function(player)
-    		player.Chatted:Connect(function(message)
-            TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, player)
-
-    		end)
-			end)
     end,
     })
  local Button = TpTab:CreateButton({Name = "Desert",
