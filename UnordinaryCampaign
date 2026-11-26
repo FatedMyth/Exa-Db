@@ -1,0 +1,123 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "Fake Title",
+    LoadingTitle = "Oompaloompa lala",
+    LoadingSubtitle = "Created By: Who knows what?",
+    ConfigurationSaving = {
+       Enabled = false,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "hehehehe"
+    },
+    Discord = {
+       Enabled = false,
+       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+    KeySystem = false, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "Untitled",
+       Subtitle = "Key System",
+       Note = "No method of obtaining the key is provided",
+       FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+    }
+ })
+
+ local MainTab = Window:CreateTab("Home🏠", nil) -- Title, Image
+ local MainSection = MainTab:CreateSection("Zone1")
+
+ Rayfield:Notify({
+    Title = "PRIME TIME",
+    Content = "Have Fun",
+    Duration = 3,
+    Image = nil,
+    Actions = { -- Notification Buttons
+       Ignore = {
+          Name = "Okay!",
+          Callback = function()
+          print("The user tapped Okay!")
+       end
+    },
+ },
+ })
+
+ local isRunning = false -- Variable to track the loop state
+
+local Toggle = MainTab:CreateToggle({
+    Name = "Auto Strength",
+    CurrentValue = false,
+    Flag = "Toggle1",
+    Callback = function(Value)
+        isRunning = Value -- Update the loop state based on the toggle value
+
+        if isRunning then
+            while isRunning do
+
+                local Event = game:GetService("ReplicatedStorage").Remotes.CampfireAction
+                Event:FireServer("InvestPoint","STR",nil)
+
+            end
+        end
+    end,
+})
+local Toggle = MainTab:CreateToggle({
+    Name = "Auto Ready (Campfire)",
+    CurrentValue = false,
+    Flag = "Toggle2",
+    Callback = function(Value)
+        isRunning = Value -- Update the loop state based on the toggle value
+
+        if isRunning then
+            while isRunning do
+                if game:GetService("ReplicatedStorage").Remotes.CampfireReadyEvent:FireServer = false then
+
+                local Event = game:GetService("ReplicatedStorage").Remotes.CampfireReadyEvent:FireServer(true)
+                wait ()
+
+                end
+            end
+        end
+    end,
+})
+local Toggle = MainTab:CreateToggle({
+    Name = "Auto Attack",
+    CurrentValue = false,
+    Flag = "Toggle2",
+    Callback = function(Value)
+        isRunning = Value -- Update the loop state based on the toggle value
+
+        if isRunning then
+            while isRunning do
+
+                local Event = game:GetService("ReplicatedStorage").Remotes.Action
+                Event:FireServer({Ability = "Dragon Breath"}) 
+
+
+                wait ()
+            end
+        end
+    end,
+})
+
+
+
+
+ local TpTab = Window:CreateTab("Teleports🛬", nil) -- Title, Image
+ local TpSection = TpTab:CreateSection("Teleports")
+
+ local Button = TpTab:CreateButton({Name = "rejoin game",
+    Callback = function()
+        local args = {[1] = "Teleport",[2] = 1}
+
+
+    end,
+    })
+ local Button = TpTab:CreateButton({Name = "Desert",
+    Callback = function()
+        local args = {[1] = "Teleport",[2] = 2}
+        game:GetService("ReplicatedStorage").Events.TeleportEvent:InvokeServer(unpack(args))
+    end,
+    })
