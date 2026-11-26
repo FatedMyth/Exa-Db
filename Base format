@@ -63,7 +63,7 @@ local Toggle = MainTab:CreateToggle({
     end,
 })
 local Toggle = MainTab:CreateToggle({
-    Name = "Auto Purchase Potion (minorEnergy)",
+    Name = "Auto Purchase Potion (Energy)",
     CurrentValue = false,
     Flag = "Toggle2",
     Callback = function(Value)
@@ -75,47 +75,21 @@ local Toggle = MainTab:CreateToggle({
                 local Event = game:GetService("ReplicatedStorage").Remotes.Shop.BuyShopItem
                 Event:InvokeServer( "minorEnergyPotion")
 
-                wait ()
-            end
-        end
-    end,
-})
-local Toggle = MainTab:CreateToggle({
-    Name = "Auto Purchase Potion (greaterEnergy)",
-    CurrentValue = false,
-    Flag = "Toggle2",
-    Callback = function(Value)
-        isRunning = Value -- Update the loop state based on the toggle value
-
-        if isRunning then
-            while isRunning do
+                task.wait(0.1)
 
                 local Event = game:GetService("ReplicatedStorage").Remotes.Shop.BuyShopItem
                 Event:InvokeServer("greaterEnergyPotion")
 
-                wait ()
-            end
-        end
-    end,
-})
-local Toggle = MainTab:CreateToggle({
-    Name = "Auto Purchase Potion (grandEnergy)",
-    CurrentValue = false,
-    Flag = "Toggle2",
-    Callback = function(Value)
-        isRunning = Value -- Update the loop state based on the toggle value
-
-        if isRunning then
-            while isRunning do
+                task.wait(0.1)
 
                 local Event = game:GetService("ReplicatedStorage").Remotes.Shop.BuyShopItem
                 Event:InvokeServer("grandEnergyPotion")
-
                 wait ()
             end
         end
     end,
 })
+
 
 
 
