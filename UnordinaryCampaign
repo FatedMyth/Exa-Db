@@ -55,10 +55,8 @@ local Toggle = MainTab:CreateToggle({
 
         if isRunning then
             while isRunning do
-
                 local Event = game:GetService("ReplicatedStorage").Remotes.CampfireAction
                 Event:FireServer("InvestPoint","STR",nil)
-
             end
         end
     end,
@@ -72,10 +70,14 @@ local Toggle = MainTab:CreateToggle({
 
         if isRunning then
             while isRunning do
-                if game:GetService("ReplicatedStorage").Remotes.CampfireReadyEvent:FireServer = false then
+                if game:GetService("ReplicatedStorage").Remotes.CampfireReady(false) then
 
-                local Event = game:GetService("ReplicatedStorage").Remotes.CampfireReadyEvent:FireServer(true)
-                wait ()
+                local Event = game:GetService("ReplicatedStorage").Remotes.CampfireReady
+				Event:FireServer(true)
+
+                else
+
+				wait ()
 
                 end
             end
@@ -91,11 +93,8 @@ local Toggle = MainTab:CreateToggle({
 
         if isRunning then
             while isRunning do
-
                 local Event = game:GetService("ReplicatedStorage").Remotes.Action
                 Event:FireServer({Ability = "Dragon Breath"}) 
-
-
                 wait ()
             end
         end
